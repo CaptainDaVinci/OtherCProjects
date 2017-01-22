@@ -17,13 +17,11 @@ int main()
 {
 
 
-	for ( char line[132]; fgets(line, sizeof line, stdin) != NULL;){
+	for ( char line[132]; fgets(line, sizeof line, stdin) != NULL; )
+	{
 
-		printf(reverse(line));
+		printf("%s", reverse(line));
 	}
-
-	return 0;
-
 }
 
 char* reverse (char *str)
@@ -31,6 +29,7 @@ char* reverse (char *str)
 
 	int l = strlen(str);
 	char temp;
+
 	for(int i = 0; i < l/2; i++)
 	{
 		temp = str[i];
@@ -38,7 +37,5 @@ char* reverse (char *str)
 		str[l-i-1] = temp;
 	}
 
-
 	return str;
 }
-
