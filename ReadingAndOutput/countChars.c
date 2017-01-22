@@ -17,25 +17,34 @@ int main()
 	int chars = 0;
 	int words = 0;
 
-	char lastChar;
+	char c;
 
-	for (char c; (c = getchar()) != EOF;)
+	while ((c = getchar()) != EOF)
 	{
-		if(c == ' ')
-			if(lastChar != ' ' && lastChar != '\t' && lastChar != '\n')
-				words++;
-		if(c == '\n'){
-			lines++;
-			if(lastChar != ' ' && lastChar != '\t' && lastChar != '\n')
-							words++;
-		}
 		chars++;
-		lastChar = c;
+		if(c == ' ' || c == '\t')
+			words++;
+
+		if(c == '\n')
+		{
+			lines++;
+			words++;
+		}
 	}
 
-	printf("%i lines \n", lines);
-	printf("%i words \n", words);
-	printf("%i characters \n" , chars);
+	if(lines == 1)
+		printf("1 line \n");
+	else
+		printf("%i lines \n", lines);
 
-	return 0;
+	if(words == 1)
+		printf("1 word \n");
+	else
+		printf("%i words \n", words);
+
+	if(chars == 1)
+		printf("1 character \n");
+	else
+		printf("%i characters \n", chars);
+
 }
