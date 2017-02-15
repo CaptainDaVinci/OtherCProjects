@@ -7,24 +7,14 @@
 
 #include <stdlib.h>
 
-
-int* dynamicArray(int array[], unsigned int len, unsigned int incr);
-
-
-
-
-
 int* dynamicArray(int array[], unsigned int len, unsigned int incr)
 {
 
 	int *new;
-	new = (int *)malloc(sizeof(int)*(len + incr));
+	new = malloc(sizeof(int)*(len + incr));
 
 	for(int i = 0; i < len; i++)
-	{
 		new[i] = array[i];
-	}
-
 
 	return new;
 }
